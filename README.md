@@ -1,4 +1,4 @@
-# commpetition program
+# 563X Competition Programs
 
 A collection of team 563X's comp programs. Testing GitHub as new place for 563 repositories and learning functionalities.
 
