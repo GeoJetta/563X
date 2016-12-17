@@ -94,10 +94,10 @@ task Record()
 			DynamicArraySet(&RightArm, i, SensorValue[RLIFTENC]);
 
 		}
-		if (DynamicArrayGet(&Gyro_Array, i-1) < SensorValue[GYRO_SENSE] - err || DynamicArrayGet(&Gyro_Array, i-1) > SensorValue[GYRO_SENSE] + err)
+		if (DynamicArrayGet(&Gyro_Array, i-1) < SensorValue[inGYRO] - err || DynamicArrayGet(&Gyro_Array, i-1) > SensorValue[inGYRO] + err)
 		{
 
-			DynamicArraySet(&Gyro_Array, i, SensorValue[GYRO_SENSE]);
+			DynamicArraySet(&Gyro_Array, i, SensorValue[inGYRO]);
 
 		}
 
