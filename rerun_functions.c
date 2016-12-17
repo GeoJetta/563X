@@ -14,9 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-
-//change to sensor names
-#define GYRO_SENSE Gyro
+//Sensor setup is found in Mario.c
 
 //wait until all motors have gone to target
 void waitForMoveFinish()
