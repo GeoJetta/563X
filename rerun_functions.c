@@ -14,13 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-
-//change to sensor names
-#define LEFT_DRIVE_ENC I2C_1 //FIXME: find and replace all of these with those currently in use
-#define RIGHT_DRIVE_ENC I2C_2
-#define LEFT_ARM_ENC I2C_4
-#define RIGHT_ARM_ENC I2C_3
-#define GYRO_SENSE Gyro
+//Sensor setup is found in Mario.c
 
 //wait until all motors have gone to target
 void waitForMoveFinish()
@@ -73,35 +67,35 @@ task Record()
 	{
 
 		//If sensor values outside of deadzone for this iteration
-		if (DynamicArrayGet(&LeftDrive, i-1) < SensorValue[LEFT_DRIVE_ENC] - err || DynamicArrayGet(&LeftDrive, i-1) > SensorValue[LEFT_DRIVE_ENC] + err)
+		if (DynamicArrayGet(&LeftDrive, i-1) < SensorValue[LEFTENC] - err || DynamicArrayGet(&LeftDrive, i-1) > SensorValue[LEFTENC] + err)
 		{
 
 			//Add value to array
-			DynamicArraySet(&LeftDrive, i, SensorValue[LEFT_DRIVE_ENC]);
+			DynamicArraySet(&LeftDrive, i, SensorValue[LEFTENC]);
 
 		}
-		if (DynamicArrayGet(&RightDrive, i-1) < SensorValue[RIGHT_DRIVE_ENC] - err || DynamicArrayGet(&RightDrive, i-1) > SensorValue[RIGHT_DRIVE_ENC] + err)
+		if (DynamicArrayGet(&RightDrive, i-1) < SensorValue[RIGHTENC] - err || DynamicArrayGet(&RightDrive, i-1) > SensorValue[RIGHTENC] + err)
 		{
 
-			DynamicArraySet(&RightDrive, i, SensorValue[RIGHT_DRIVE_ENC]);
+			DynamicArraySet(&RightDrive, i, SensorValue[RIGHTENC]);
 
 		}
-		if (DynamicArrayGet(&LeftArm, i-1) < SensorValue[LEFT_ARM_ENC] - err || DynamicArrayGet(&LeftArm, i-1) > SensorValue[LEFT_ARM_ENC] + err)
+		if (DynamicArrayGet(&LeftArm, i-1) < SensorValue[LLIFTENC] - err || DynamicArrayGet(&LeftArm, i-1) > SensorValue[LLIFTENC] + err)
 		{
 
-			DynamicArraySet(&LeftArm, i, SensorValue[LEFT_ARM_ENC]);
+			DynamicArraySet(&LeftArm, i, SensorValue[LLIFTENC]);
 
 		}
-		if (DynamicArrayGet(&RightArm, i-1) < SensorValue[RIGHT_ARM_ENC] - err || DynamicArrayGet(&RightArm, i-1) > SensorValue[RIGHT_ARM_ENC] + err)
+		if (DynamicArrayGet(&RightArm, i-1) < SensorValue[RLIFTENC] - err || DynamicArrayGet(&RightArm, i-1) > SensorValue[RLIFTENC] + err)
 		{
 
-			DynamicArraySet(&RightArm, i, SensorValue[RIGHT_ARM_ENC]);
+			DynamicArraySet(&RightArm, i, SensorValue[RLIFTENC]);
 
 		}
-		if (DynamicArrayGet(&Gyro_Array, i-1) < SensorValue[GYRO_SENSE] - err || DynamicArrayGet(&Gyro_Array, i-1) > SensorValue[GYRO_SENSE] + err)
+		if (DynamicArrayGet(&Gyro_Array, i-1) < SensorValue[in \bGYRO] - err || DynamicArrayGet(&Gyro_Array, i-1) > SensorValue[in \bGYRO] + err)
 		{
 
-			DynamicArraySet(&Gyro_Array, i, SensorValue[GYRO_SENSE]);
+			DynamicArraySet(&Gyro_Array, i, SensorValue[in \bGYRO]);
 
 		}
 
